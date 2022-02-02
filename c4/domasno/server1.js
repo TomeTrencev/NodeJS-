@@ -7,8 +7,13 @@ const pathToFile = path.join(__dirname, "Helloo World")
 
 
 const server = http.createServer((request, response)=>{
-    response.statusCode = 200;
-     response.end("yooooooassadas");
+    operationsFs.writeReadRetur(path, "asdas")
+    .then((fileContent) =>{
+        console(fileContent.toString())
+        response.statusCode = 200;
+
+        response.end();
+    })
 });
 
 server.listen(8080,()=>{
