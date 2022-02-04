@@ -7,7 +7,7 @@ router.get  ("/home",(req, res)=>{
 });
 
 router.post  ("/register", (req, res)=>{
-    if(req.body.password){
+    if(req.body.password && req.body.username){
         return res.status(201).json("You are Logged in")
     }
     return res.status(401).json("What is your password")
