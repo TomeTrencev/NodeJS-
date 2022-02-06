@@ -11,7 +11,7 @@ let allPlanets = [
     }
 ]
 //add new Planet
-const addPlanet = ({planetName})=>{
+const addPlanet = async ({planetName})=>{
     const newPlanet = {
         id:allPlanets.length+1,
         planetName:planetName
