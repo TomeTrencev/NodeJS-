@@ -1,11 +1,11 @@
 const mongoose = require ("mongoose");
 
 const Movie = mongoose.model('movies',{
-    title:String,
+    title:{type:String, index: true, unique: true},
     director:String,
     genre:String,
     releaseDate:Date,
-    tags: [String]
+    tags: [String],
     
 });
 

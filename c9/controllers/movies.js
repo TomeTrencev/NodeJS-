@@ -13,7 +13,12 @@ const getMovieByTitle = async (req,res,next)=>{
     const title = req.params.title ;
 
     try {
-        const movie = await Movie.findOne({ title});
+        // const movie = await Movie.findOne({ title});
+        const movie = await Movie.find()
+        .where("age")
+        .lte(21)
+        .sort({"age": -1})
+        .limit(15) 
         return movie;
     } catch (error) {
         return res.status(500).json(error);

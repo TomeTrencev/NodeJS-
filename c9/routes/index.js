@@ -11,12 +11,12 @@ const {
 const PREFIX = process.env.API_PREFIX;
 
 router
-.route(`${PREFIX}/movies}`)
+.route(`${PREFIX}/movies`)
 .get(getAllMovies)
 .post(createMovies)
 
 
-router.route(`${PREFIX}/movies/:id}`).delete(deleteMovie).put(updateMovie);
+router.route(`${PREFIX}/movies/:id`).delete(deleteMovie).put(updateMovie);
 
 
 router.use((req,res)=>{
