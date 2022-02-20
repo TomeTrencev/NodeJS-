@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
 
-const SALT_ROUNDS = +process.env.SALT_ROUNDS;
+
 
 const registerUser = async (req,res,next)=>{
     const {username,email,password} = req.body;
@@ -16,8 +16,8 @@ const registerUser = async (req,res,next)=>{
 
     try {
         
-        const encryptedPassword = await bcrypt.hash(password, SALT_ROUNDS);
-        await User.create({username, encryptedPassword});
+        const encryptedPassword = await bcrypt.hash(password);
+        await User.create({username,email, encryptedPassword});
         return res.status(201).json('User is created');
     } catch (error) {
         return res.status(500).json("User cannot be created!")

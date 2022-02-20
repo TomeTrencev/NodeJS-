@@ -2,7 +2,7 @@ const Product = require('../models/Product');
 
 
 
-const SALT_ROUNDS = +process.env.SALT_ROUNDS;
+
 
 const createProduct = async (req,res,next)=>{
     const { productName, productQuantity} = req.body;

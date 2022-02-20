@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const express = require("express");
+
 
 const createToken = (username, id) =>{
     return jwt.sign({username, id}, process.env.JWT_SECRET, {
