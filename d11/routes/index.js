@@ -3,7 +3,8 @@ const {
     getAllCars,
     addNewCar,
     getCarConsumption,
-    allHybridCars
+    allHybridCars,
+    allWhiteCars
     
 }= require("../controllers/cars")
 
@@ -16,6 +17,7 @@ router
 
 router.get(PREFIX + "/carconsumption" , getCarConsumption)
 router.get(PREFIX + "/carsmodel" , allHybridCars)
+router.get(PREFIX + "/whitecars",allWhiteCars)
 
 
 
